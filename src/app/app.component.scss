@@ -1,36 +1,211 @@
-.nav {
-    position: relative;
-    top: 2rem;
-    right: 1rem;
-}
+// .nav {
+//     position: relative;
+//     top: 2rem;
+//     right: 1rem;
+// }
 
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: transparent;
+// ul {
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 0;
+//     overflow: hidden;
+//     background-color: transparent;
    
-}
+// }
 
-li {
-    float: right;
-    transition: .5s all;
-    border-radius: 5px;
-    margin: 1rem;
-}
+// li {
+//     float: right;
+//     transition: .5s all;
+//     border-radius: 5px;
+//     margin: 1rem;
+// }
 
-li a {
-    display: block;
-    color: black;
+// li a {
+//     display: block;
+//     color: black;
+//     text-align: center;
+//     padding: 14px 16px;
+//     text-decoration: none;
+//     font-size: 1.5rem;
+// }
+
+// li:hover {
+//     background-color: rgba(250, 252, 247, .7);
+// }
+
+
+
+
+@mixin centerMe {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+      @media (max-width: 37.5em) {@content}; // 600px
+    }
+    @if $breakpoint == tab-port {
+      @media (max-width: 56.25em) {@content}; // 900px
+    }
+    @if $breakpoint == tab-land {
+      @media (max-width: 75em) {@content}; // 1200px
+    }
+    @if $breakpoint == big-desktop {
+      @media (min-width: 112.5em) {@content}; // 1800px //
+    }
+  }
+  
+  .u-centerMe {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
+  }
+  
+  *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+    }
+  
+    html {
+      font-size: 62.5%;
+      
+    }
+    
+    body {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: gray;
+    
+    }
+  
+    .header {
+      height: 100vh;
+      width: 100%;
+    
+      background-size: cover;
+    
+      background-image: url('https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  
+      
+      &__title-box {
+          position: absolute;
+          top: 30%;
+          left: 10%;
+          text-align: center;
+          backface-visibility: hidden;
+          
+      }
+      
+   
+  }
+  
+  
+  .title-primary {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 80;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      
+  
+      &--main {
+          letter-spacing: 10px;
+          display: block;
+          margin-bottom: 20px;
+        }
+  
+        &--underline {
+          width: 100%;
+          border-bottom: 5px solid #fff;
+          display: block;
+        }
+  
+        &--sub {
+          font-size: 10px;
+          letter-spacing: 10px;
+          display: block;
+          margin-top: 60px;
+        }
+  
+    }
+  
+    .title-secondary {
+      color:black;
+      font-size: 30px;
+      font-weight: 80;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+  
+    .section-about {
+      height: 90vh;
+      padding: 5rem 0 0 0;
+      margin: 3rem;
+      scroll-behavior: smooth;
+    }
+  
+    @include respond(tab-port) {
+  
+      .container {
+        flex-direction: column;
+        }
+  
+        .title-primary--underline {
+          width: 93%;
+        }
+    
+  }
+  
+    .container {
+    display: flex;
+    }
+  
+    .item {
+      
+      margin: 2rem;
+      flex-grow: 1;
+      flex-basis: 0;
+      height: auto;
+      color: black;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 30px;
+      text-align: center;
+  
+      &__inner {
+       
+      }
+    }
+  
+    .me-text {
+      font-family: 'Rokkitt', serif;
+    }
+    .me-links {
+      
+     padding: 2rem;
+     margin: 5rem;
+    }
 
-li:hover {
-    background-color: rgba(250, 252, 247, .7);
-}
+    
+  
+  .me-image {
+    width: 100%;
+  }
 
+  .fa-github-square{
+    font-size: 70px;
+    color: black;
+  }
+  .fa-envelope{
+    font-size: 75px;
+    color: black;
+  }
+
+ 
